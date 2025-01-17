@@ -4,12 +4,13 @@ class Solution(object):
         :type arr: List[int]
         :rtype: bool
         """
+        list = []
         
         for i in range(len(arr)) :
-            for j in range(i + 1, len(arr)) :
-                print(arr[i], arr[j])
-                if arr[i] == 2 * arr[j] or (arr[j] % 2 == 0 and arr[j] / 2 == arr[i]) :
-                    return True
+            if arr[i] * 2 in list or (arr[i] % 2 == 0 and arr[i] // 2 in list):
+                return True
+            
+            list.append(arr[i])
         
         return False
                 
